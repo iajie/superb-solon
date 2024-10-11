@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.superb</groupId>
+    <artifactId>superb-common-bom</artifactId>
+    <version>1.0.0.0</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <mysql.connector.version>5.1.49</mysql.connector.version>
+        <mybatis.flex.version>1.9.5</mybatis.flex.version>
+        <sa.token.version>1.38.0</sa.token.version>
+        <bcprov.version>1.70</bcprov.version>
+        <hutool.version>5.8.29</hutool.version>
+        <flowable.version>7.0.1</flowable.version>
+        <flowable.ui.version>6.8.1</flowable.ui.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- mybatis-flex版本定义 -->
+            <dependency>
+                <groupId>com.mybatis-flex</groupId>
+                <artifactId>mybatis-flex-solon-plugin</artifactId>
+                <version>${mybatis.flex.version}</version>
+            </dependency>
+            <!-- mysql数据驱动 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.version}</version>
+            </dependency>
+            <!-- 核心工具包 -->
+            <dependency>
+                <groupId>com.superb</groupId>
+                <artifactId>superb-common-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-dependencies</artifactId>
+                <version>${sa.token.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-captcha</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-crypto</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <!-- 接口文档 -->
+            <dependency>
+                <groupId>com.superb</groupId>
+                <artifactId>superb-common-doc</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk15on</artifactId>
+                <version>${bcprov.version}</version>
+            </dependency>
+            <!-- 工具类 -->
+            <dependency>
+                <groupId>com.superb</groupId>
+                <artifactId>superb-common-utils</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- redis -->
+            <dependency>
+                <groupId>com.superb</groupId>
+                <artifactId>superb-common-redis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- 安全 -->
+            <dependency>
+                <groupId>com.superb</groupId>
+                <artifactId>superb-common-security</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- 数据源 -->
+            <dependency>
+                <groupId>com.superb</groupId>
+                <artifactId>superb-common-database</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- flowable流程引擎依赖 -->
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-engine</artifactId>
+                <!-- 依赖冲突，导致无法查询，排除，使用mybatis-flex -->
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.mybatis</groupId>
+                        <artifactId>*</artifactId>
+                    </exclusion>
+                </exclusions>
+                <version>${flowable.version}</version>
+            </dependency>
+            <!-- 任务api -->
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-task-service-api</artifactId>
+                <version>${flowable.version}</version>
+            </dependency>
+            <!-- flowable-ui模型操作依赖 -->
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-ui-modeler-logic</artifactId>
+                <!-- 依赖冲突，导致无法查询，排除，使用mybatis-flex -->
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.mybatis</groupId>
+                        <artifactId>*</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>*</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework.security</groupId>
+                        <artifactId>*</artifactId>
+                    </exclusion>
+                </exclusions>
+                <version>${flowable.ui.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

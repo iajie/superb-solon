@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>superb-solon</artifactId>
+        <groupId>com.superb</groupId>
+        <version>1.0.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>superb-common</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>superb-common-bom</module>
+        <module>superb-common-core</module>
+        <module>superb-common-doc</module>
+        <module>superb-common-utils</module>
+        <module>superb-common-redis</module>
+        <module>superb-common-security</module>
+        <module>superb-common-database</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!-- 简化 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.serialization.fastjson2</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

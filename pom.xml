@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.noear</groupId>
+        <artifactId>solon-parent</artifactId>
+        <version>2.9.0-M11</version>
+        <relativePath />
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.superb</groupId>
+    <artifactId>superb-solon</artifactId>
+    <version>1.0.0.0</version>
+    <modules>
+        <module>superb-common</module>
+        <module>superb-system</module>
+        <module>superb-gateway</module>
+        <module>superb-allocation</module>
+        <module>superb-flowable</module>
+    </modules>
+    <packaging>pom</packaging>
+
+    <!-- 父级工程定义版本 -->
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+
+    <dependencyManagement>
+        <!-- 公共版本管理 -->
+        <dependencies>
+            <dependency>
+                <groupId>com.superb</groupId>
+                <artifactId>superb-common-bom</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

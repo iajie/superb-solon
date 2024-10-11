@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.superb.system.mapper.SystemUserMapper">
+    <!-- 查询用户信息 并获取默认部门(非用户所属部门) -->
+    <select id="userInfo" resultType="com.superb.system.api.dto.User">
+        SELECT u.username, u.nickname, u.phone_number, u.email, u.idcard, u.avatar,
+               u.sex, u.authentication, u.status, u.superb, u.organ_id, u.remarks
+        FROM system_user AS u WHERE u.id = #{userId}
+    </select>
+
+</mapper>

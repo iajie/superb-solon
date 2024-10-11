@@ -1,0 +1,44 @@
+server:
+  port: 9998
+  # 网关端口-会注册到vert.x中，转发会同过vert.x进行处理，vert.x天生支持并发
+  gateway:
+    port: 9999
+solon:
+  env: dev
+  app:
+    name: superb-gateway
+    meta:
+      version: "v1.0.0.0"
+      author: "ajie"
+  cloud:
+    nacos2:
+      server: "nacos.superb.com:8848"
+      username: nacos
+      password: nacos
+      namespace: ${solon.env}
+      config:
+        # 加载nacos配置文件
+        load: "application-${solon.env}.yml,${solon.app.name}-${solon.env}.yml"
+
+# 日志配置和打印
+solon.logging:
+  logger:
+    "com.alibaba.nacos":
+      level: ERROR
+    "org.redisson":
+      level: ERROR
+    "io.netty":
+      level: ERROR
+  appender:
+    console:
+      level: TRACE
+      enable: true #是否启用
+      pattern: "[${solon.app.name}] %yellow([%d{yyyy-MM-dd HH:mm:ss.SSS}]) %blue([%thread]) %highlight([%level]) %green(%logger) %blue(Line:%L) - %cyan(%msg%n)"
+    file:
+      name: "logs/${solon.app.name}"
+      pattern: "[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] [%level] %logger Line:%L - %msg%n"
+      level: INFO
+      enable: true #是否启用
+      extension: ".log"   #v2.2.18 后支持（例：.log, .log.gz, .log.zip）
+      maxFileSize: "10 MB"
+      maxHistory: "7"

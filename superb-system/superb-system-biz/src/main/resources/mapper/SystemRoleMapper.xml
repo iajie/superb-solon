@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.superb.system.mapper.SystemRoleMapper">
+    <!-- 根据用户id获取角色列表 -->
+    <select id="listByUserId" resultType="java.lang.String">
+        SELECT `role_id` FROM system_user_data_scope WHERE user_id = #{userId} AND organ_id = #{organId} ORDER BY is_main DESC LIMIT 1
+    </select>
+</mapper>

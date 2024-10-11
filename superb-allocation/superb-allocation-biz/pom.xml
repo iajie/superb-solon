@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>superb-allocation</artifactId>
+        <groupId>com.superb</groupId>
+        <version>1.0.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
+    <artifactId>superb-allocation-biz</artifactId>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.superb</groupId>
+            <artifactId>superb-allocation-api</artifactId>
+            <version>1.0.0.0</version>
+        </dependency>
+        <!-- nacos注册中心 -->
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>nacos2-solon-cloud-plugin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.superb</groupId>
+            <artifactId>superb-common-security</artifactId>
+        </dependency>
+        <!-- aliyun-oss -->
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>aliyun-oss-solon-cloud-plugin</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.noear</groupId>
+                <artifactId>solon-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

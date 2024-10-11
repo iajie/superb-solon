@@ -1,0 +1,46 @@
+server.port: 4020
+
+solon:
+  env: dev
+  app:
+    name: superb-flowable-biz
+    meta:
+      version: "v1"
+      author: "ajie"
+  cloud:
+    nacos2:
+      server: "nacos.superb.com:8848"
+      username: nacos
+      password: nacos
+      namespace: dev
+      config:
+        load: "application-${solon.env}.yml,${solon.app.name}-${solon.env}.yml"
+
+
+solon.logging:
+  logger:
+    "com.alibaba.nacos":
+      level: ERROR
+    "org.redisson":
+      level: ERROR
+    "io.netty":
+      level: ERROR
+    "com.zaxxer.hikari":
+      level: ERROR
+    "org.apache.ibatis":
+      level: ERROR
+    "com.superb.flowable.mapper":
+      level: INFO
+  appender:
+    console:
+      level: TRACE
+      enable: true #是否启用
+      pattern: "[${solon.app.name}] %yellow([%d{yyyy-MM-dd HH:mm:ss.SSS}]) %blue([%thread]) %highlight([%level]) %green(%logger) %blue(Line:%L) - %cyan(%msg%n)"
+    file:
+      name: "logs/${solon.app.name}"
+      pattern: "[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] [%level] %logger Line:%L - %msg%n"
+      level: INFO
+      enable: true #是否启用
+      extension: ".log"   #v2.2.18 后支持（例：.log, .log.gz, .log.zip）
+      maxFileSize: "10 MB"
+      maxHistory: "7"

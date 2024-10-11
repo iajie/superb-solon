@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.superb.system.mapper.SystemTenantMapper">
+
+    <select id="getIndex" resultType="java.lang.String">
+        SELECT INDEX_NAME FROM information_schema.STATISTICS WHERE TABLE_NAME = #{table} AND COLUMN_NAME = #{column} LIMIT 1
+    </select>
+
+    <select id="getExistColumn" resultType="java.lang.Boolean">
+        SELECT COUNT(1) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = #{table} AND COLUMN_NAME = #{column}
+    </select>
+</mapper>

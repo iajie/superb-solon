@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.superb.system.mapper.SystemPermissionMapper">
+    <!-- 权限分配 -->
+    <insert id="distribution">
+        INSERT INTO system_role_permission VALUES <foreach collection="permissionIds" item="item" separator=",">
+            (#{roleId}, #{item}, 1)
+        </foreach>
+    </insert>
+    <insert id="distributionMenus">
+        INSERT INTO system_role_permission VALUES <foreach collection="menuIds" item="item" separator=",">
+        (#{roleId}, #{item}, 0)
+    </foreach>
+    </insert>
+
+    <delete id="deletePermsByRoleId">
+        DELETE FROM system_role_permission WHERE role_id = #{roleId}
+        <if test="permissionId != null">
+            AND permission_id = #{permissionId}
+        </if>
+    </delete>
+    <!-- 权限列表 -->
+    <select id="listByUserId" resultType="java.lang.String">
+        SELECT DISTINCT `perms` FROM system_permission WHERE id IN (
+            SELECT permission_id FROM system_role_permission
+             WHERE menu_type = 2 AND role_id IN <foreach collection="roleIds" separator="," open="(" close=")" item="item">#{item}</foreach>
+        )
+    </select>
+
+    <!-- top menu -->
+    <select id="menuList" resultType="com.superb.system.api.entity.SystemPermission">
+        SELECT id, name, `path`, component, icon, parent_id, outer_chain, status, menu_type FROM system_permission
+        <where>
+            AND `type`=#{menuType}
+            AND id in (
+                SELECT permission_id FROM system_role_permission
+                    WHERE `type`=0 AND role_id IN <foreach collection="roleIds" separator="," open="(" close=")" item="item">#{item}</foreach>
+            )
+        </where>
+        order by sort
+    </select>
+
+    <!-- 根据角色获取权限列表 -->
+    <select id="getRolePermission" resultType="java.lang.String">
+        SELECT permission_id FROM system_role_permission WHERE role_id = #{roleId} AND type = #{type}
+    </select>
+
+</mapper>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>superb-solon</artifactId>
+        <groupId>com.superb</groupId>
+        <version>1.0.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
+    <artifactId>superb-gateway</artifactId>
+    <description>Superb 网关(微服务聚合)</description>
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.superb</groupId>
+            <artifactId>superb-common-core</artifactId>
+        </dependency>
+        <!-- nacos注册中心 -->
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>nacos2-solon-cloud-plugin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.superb</groupId>
+            <artifactId>superb-common-utils</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon-openapi2-knife4j</artifactId>
+        </dependency>
+        <!-- 微服务扩展插件 提供基于服务名的http调用 -->
+        <!--<dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.cloud.httputils</artifactId>
+        </dependency>-->
+        <!-- 微服务gateway，基于vert.x实现 -->
+        <dependency>
+            <groupId>org.noear</groupId>
+            <artifactId>solon.cloud.gateway</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.noear</groupId>
+                <artifactId>solon-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
