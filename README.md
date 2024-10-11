@@ -201,72 +201,72 @@ Superb 是一款基于Java17+Solon开发的技术框架！前后端分离架构 
 
 登录页面登录背景图片或背景可配置
 
-![image-20240802135120000](C:\Users\Mayn\AppData\Roaming\Typora\typora-user-images\image-20240802135120000.png)
+![image-20240802135120000](images/image-20240802135120000.png)
 
 主页面
 
-![image-20240802135424883](C:\Users\Mayn\AppData\Roaming\Typora\typora-user-images\image-20240802135424883.png)
+![image-20240802135424883](images/image-20240802135424883.png)
 
 租户管理，可对租户信息进行初始化同步
 
-![image-20240802140152415](C:\Users\Mayn\AppData\Roaming\Typora\typora-user-images\image-20240802140152415.png)
+![image-20240802140152415](images/image-20240802140152415.png)
 
 炙讯云->为旗下租户(地平线公司)进行初始化，可初始化菜单、权限、系统角色、管理员
 
-![image-20240802140249857](C:\Users\Mayn\AppData\Roaming\Typora\typora-user-images\image-20240802140249857.png)
+![image-20240802140249857](images/image-20240802140249857.png)
 
 角色管理-各个租户自己管理、可支持部门角色
 
-![image-20240802140526241](C:\Users\Mayn\AppData\Roaming\Typora\typora-user-images\image-20240802140526241.png)
+![image-20240802140526241](images/image-20240802140526241.png)
 
 权限分配：粒度为方法接口、按钮显隐
 
-![image-20240802140553653](C:\Users\Mayn\AppData\Roaming\Typora\typora-user-images\image-20240802140553653.png)
+![image-20240802140553653](images/image-20240802140553653.png)
 
 用户管理，自带数据权限过滤、与租户信息都支持了数据脱敏(字段加密在本框架中未使用，在Superb Cloud Spring中已实现数据字段加密)
 
-![image-20240802141549118](C:\Users\Mayn\AppData\Roaming\Typora\typora-user-images\image-20240802141549118.png)
+![image-20240802141549118](images/image-20240802141549118.png)
 
 菜单管理-各个租户自定义
 
-![image-20240802152947909](C:\Users\Mayn\AppData\Roaming\Typora\typora-user-images\image-20240802152947909.png)
+![image-20240802152947909](images/image-20240802152947909.png)
 
 权限管理
 
-![image-20240802153009052](C:\Users\Mayn\AppData\Roaming\Typora\typora-user-images\image-20240802153009052.png)
+![image-20240802153009052](images/image-20240802153009052.png)
 
 部门管理
 
-![image-20240802153038287](C:\Users\Mayn\AppData\Roaming\Typora\typora-user-images\image-20240802153038287.png)
+![image-20240802153038287](images/image-20240802153038287.png)
 
 租户系统配置：暂未开始
 
-![image-20240802153054350](C:\Users\Mayn\AppData\Roaming\Typora\typora-user-images\image-20240802153054350.png)
+![image-20240802153054350](images/image-20240802153054350.png)
 
 数据字典类型定义
 
-![image-20240802143506415](C:\Users\Mayn\AppData\Roaming\Typora\typora-user-images\image-20240802143506415.png)
+![image-20240802143506415](images/image-20240802143506415.png)
 
 数据字典配置项
 
-![image-20240802152845088](C:\Users\Mayn\AppData\Roaming\Typora\typora-user-images\image-20240802152845088.png)
+![image-20240802152845088](images/image-20240802152845088.png)
 
 行政区划管理，目前基础数据精确到街道、乡、镇
 
-![image-20240802153153086](C:\Users\Mayn\AppData\Roaming\Typora\typora-user-images\image-20240802153153086.png)
+![image-20240802153153086](images/image-20240802153153086.png)
 
 数据权限的切换，可以一个账号测试多种不同角色权限，和数据权限，可以灵活切换
 
-![image-20240802153254374](C:\Users\Mayn\AppData\Roaming\Typora\typora-user-images\image-20240802153254374.png)
+![image-20240802153254374](images/image-20240802153254374.png)
 
 个人信息和主题定制
 
-![image-20240802153348277](C:\Users\Mayn\AppData\Roaming\Typora\typora-user-images\image-20240802153348277.png)
+![image-20240802153348277](images/image-20240802153348277.png)
 
 个人信息支持账号修改、密码修改、头像等基础信息修改
 
-![image-20240802153431705](C:\Users\Mayn\AppData\Roaming\Typora\typora-user-images\image-20240802153431705.png)
+![image-20240802153431705](images/image-20240802153431705.png)
 
 主题可以定制，不同风格，主题跟随账号保存
 
-![image-20240802153505923](C:\Users\Mayn\AppData\Roaming\Typora\typora-user-images\image-20240802153505923.png)
+![image-20240802153505923](images/image-20240802153505923.png)
